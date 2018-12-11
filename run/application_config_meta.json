@@ -10,230 +10,276 @@
     "coreLogName": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js",
     "agentLogName": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js",
     "errorLogName": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js",
-    "env": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "disableConsoleAfterReady": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "outputJSON": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "buffer": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "coreLogger": {
-      "consoleLevel": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.local.js"
-    },
-    "allowDebugAtProd": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "env": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "coreLogger": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "allowDebugAtProd": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
   "logrotator": {
     "enable": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js",
-    "filesRotateByHour": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "hourDelimiter": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "filesRotateBySize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "maxFileSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "maxFiles": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "rotateDuration": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js",
-    "maxDays": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/config.default.js"
+    "filesRotateByHour": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/config.default.js"
   },
   "gzip": {
     "match": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js",
     "threshold": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js"
   },
   "session": {
-    "maxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session/config/config.default.js",
-    "key": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session/config/config.default.js",
-    "httpOnly": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session/config/config.default.js",
-    "encrypt": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session/config/config.default.js"
+    "maxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session/config/config.default.js"
   },
   "security": {
-    "domainWhiteList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-    "protocolWhiteList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-    "defaultMiddleware": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
+    "domainWhiteList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
     "csrf": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "useSession": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "ignoreJSON": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "cookieName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "sessionName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "headerName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "bodyName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "queryName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "xframe": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "value": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "hsts": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.local.js",
-      "maxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "includeSubdomains": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "maxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "dta": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "methodnoallow": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "noopen": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "nosniff": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "xssProtection": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "value": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "csp": {
-      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "policy": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     },
     "ssrf": {
-      "ipBlackList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js",
-      "checkAddress": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+      "ipBlackList": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
     }
   },
   "helper": {
-    "shtml": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/config.default.js"
+    "shtml": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
   },
   "jsonp": {
-    "limit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-jsonp@1.2.2@egg-jsonp/config/config.default.js",
-    "callback": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-jsonp@1.2.2@egg-jsonp/config/config.default.js",
-    "csrf": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-jsonp@1.2.2@egg-jsonp/config/config.default.js"
+    "limit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jsonp/config/config.default.js"
   },
   "onerror": {
-    "errorPageUrl": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-onerror@1.6.0@egg-onerror/config/config.default.js",
-    "appErrorFilter": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-onerror@1.6.0@egg-onerror/config/config.default.js"
+    "errorPageUrl": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/config/config.default.js"
   },
   "i18n": {
-    "defaultLocale": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/config.default.js",
-    "dirs": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/config.default.js",
-    "queryField": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/config.default.js",
-    "cookieField": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/config.default.js",
-    "cookieMaxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/config.default.js"
+    "defaultLocale": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/config.default.js"
   },
   "watcher": {
-    "type": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/config/config.local.js",
+    "type": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/config/config.default.js",
     "eventSources": {
-      "default": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/config/config.default.js",
-      "development": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/config/config.default.js"
+      "default": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-schedule/config/config.default.js"
     }
   },
   "multipart": {
-    "autoFields": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "defaultCharset": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "fieldNameSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "fieldSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "fields": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "fileSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "files": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "fileExtensions": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js",
-    "whitelist": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/config.default.js"
-  },
-  "development": {
-    "watchDirs": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development/config/config.default.js",
-    "ignoreDirs": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development/config/config.default.js",
-    "fastReady": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development/config/config.default.js",
-    "reloadOnDebug": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development/config/config.default.js"
+    "mode": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/config.default.js"
+    }
   },
   "static": {
-    "prefix": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js",
-    "dir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js",
-    "dynamic": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js",
-    "preload": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js",
-    "buffer": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js",
-    "maxFiles": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/config.default.js"
+    "prefix": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.prod.js",
+    "maxFiles": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.default.js",
+    "maxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/config.prod.js"
   },
   "view": {
-    "root": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/config.default.js",
-    "cache": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/config.local.js",
-    "defaultExtension": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/config.default.js",
-    "defaultViewEngine": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/config.default.js",
-    "mapping": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/config.default.js"
+    "root": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/config.default.js",
+    "defaultExtension": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/config.default.js"
   },
-  "env": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "name": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "proxy": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "protocolHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "ipHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "hostHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+  "env": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "name": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
   "pkg": {
-    "name": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+    "name": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "version": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "description": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "private": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
     "dependencies": {
-      "egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "egg-scripts": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-alinode": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-cors": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-sequelize": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "js-md5": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
-      "egg-bin": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "egg-mock": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "eslint": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "eslint-config-egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "autod": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
     "scripts": {
-      "dev": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "test": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "cov": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "start": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "stop": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "start": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "stop": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "dev": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "debug": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "test": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "cov": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "lint": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "ci": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "autod": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "migrate:new": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "migrate:up": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "migrate:down": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
-    "private": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "ci": {
+      "version": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "url": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "license": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
-  "baseDir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "HOME": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "rundir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+  "baseDir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
   "dump": {
-    "ignore": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "ignore": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
   "confusedConfigurations": {
-    "bodyparser": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "notFound": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "sitefile": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "middlewares": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "httpClient": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "bodyparser": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
   "notfound": {
-    "pageUrl": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "pageUrl": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
   "siteFile": {
-    "/favicon.ico": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+    "/favicon.ico": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
   },
   "bodyParser": {
-    "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "encoding": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "formLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "jsonLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "strict": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+    "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "strict": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
     "queryString": {
-      "arrayLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "depth": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "parameterLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "arrayLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "depth": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     }
   },
   "httpclient": {
-    "enableDNSCache": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "dnsCacheMaxLength": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "dnsCacheMaxAge": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+    "enableDNSCache": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
     "request": {
-      "timeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "timeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
     "httpAgent": {
-      "keepAlive": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "freeSocketKeepAliveTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "maxSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "maxFreeSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "keepAlive": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
     "httpsAgent": {
-      "keepAlive": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "freeSocketKeepAliveTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "maxSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "maxFreeSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "keepAlive": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     }
   },
-  "coreMiddleware": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-  "workerStartTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
+  "meta": {
+    "enable": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "logging": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
   "cluster": {
     "listen": {
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "port": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-      "hostname": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "port": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     }
   },
   "clusterClient": {
-    "maxWaitTime": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js",
-    "responseTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/config.default.js"
-  }
+    "maxWaitTime": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
 }

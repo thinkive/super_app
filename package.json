@@ -1,21 +1,52 @@
 {
-  "name": "static-example",
+  "name": "server_app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
   "dependencies": {
-    "egg": "^1.10.1",
-    "egg-scripts": "^2.6.0"
+    "egg": "^2.2.1",
+    "egg-alinode": "^2.0.1",
+    "egg-cors": "^2.0.0",
+    "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^3.1.2",
+    "js-md5": "^0.7.3",
+    "mysql2": "^1.5.2"
   },
   "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
     "egg-bin": "^4.3.5",
-    "egg-mock": "^3.13.1",
-    "eslint": "^5.1.0",
-    "eslint-config-egg": "^7.0.0"
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
   },
   "scripts": {
-    "dev": "egg-bin dev --port=8080",
-    "test": "egg-bin test",
+    "start": "egg-scripts start --daemon --env=prod --port=7002 --title=egg-server-blog",
+    "stop": "egg-scripts stop --title=egg-server-blog",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "start": "egg-scripts start --daemon ",
-    "stop": "egg-scripts stop"
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "migrate:new": "egg-sequelize migration:create",
+    "migrate:up": "egg-sequelize db:migrate",
+    "migrate:down": "egg-sequelize db:migrate:undo"
   },
-  "private": true
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-water/egg-blog.git"
+  },
+  "author": "k-water",
+  "license": "MIT"
 }

@@ -17,9 +17,9 @@ module.exports = appInfo => {
   // console.log(appInfo.root)
 
   return {
-    middleware: ['gzip', 'compress' ],
+    middleware: [ 'gzip', 'compress' ],
 
-    keys: 'my-cookie-secret-key',
+    keys: appInfo.name + '_1520690141955_3949',
     // 日志分为 NONE，DEBUG，INFO，WARN 和 ERROR 5 个级别 ,
     // 默认只会输出 INFO 及以上（WARN 和 ERROR）的日志到文件中。
     logger: {
@@ -57,6 +57,31 @@ module.exports = appInfo => {
 
       threshold: 1024, // 小于 1k 的响应体不压缩
     },
-
+    sequelize: {
+      dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+      dialectOptions: {
+        charset: 'utf8mb4',
+      },
+      database: 'egg_db',
+      host: '115.29.145.75',
+      port: '3306',
+      username: 'root',
+      password: '217891qqqq',
+      timezone: '+08:00',
+    },
+    security: {
+      csrf: {
+        enable: false,
+      },
+      domainWhiteList: [ 'http://119.29.151.195' ],
+    },
+    cors: {
+      credentials: true,
+    },
+    alinode: {
+      enable: true,
+      appid: 'your appid',
+      secret: 'your secret',
+    },
   };
 };

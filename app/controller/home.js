@@ -4,6 +4,7 @@ const Controller = require('egg').Controller;
 
 class Home extends Controller {
   async render() {
+  	console.log(111)
     const ctx = this.ctx;
     this.logger.info('~~~~~~~~~~~~~~页面get参数~~~~~~~~' + ctx.request.query.id + '|' + ctx.query.id)
     this.logger.info('~~~~~~~~~~~~~~helper~~~~~~~~~~~~~~' + ctx.helper.formatUser(ctx.query.id))

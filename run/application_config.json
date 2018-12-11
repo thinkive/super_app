@@ -7,6 +7,7 @@
       "encrypt": true,
       "overwrite": true,
       "signed": true,
+      "autoCommit": true,
       "encode": "<Function encode>",
       "decode": "<Function decode>",
       "genid": "<Function anonymous>"
@@ -52,6 +53,10 @@
         "enable": true,
         "matching": "<Function anonymous>"
       },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
       "xssProtection": {
         "enable": true,
         "value": "1; mode=block",
@@ -64,7 +69,8 @@
       "ssrf": {
         "ipBlackList": null,
         "checkAddress": null
-      }
+      },
+      "_protocolWhiteListSet": "<Set>"
     },
     "helper": {
       "shtml": {}
@@ -79,24 +85,24 @@
     },
     "onerror": {
       "errorPageUrl": "",
-      "appErrorFilter": null
+      "appErrorFilter": null,
+      "templatePath": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-jsonp@1.2.2@egg-jsonp/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-onerror@1.6.0@egg-onerror/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-schedule@2.6.0@egg-schedule/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view/config/locales",
-        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jsonp/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-schedule/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view/config/locales",
+        "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/locales",
         "/Users/wecloud/WebstormProjects/examples/super_app/config/locales"
       ],
       "queryField": "locale",
@@ -105,13 +111,20 @@
       "functionName": "__"
     },
     "watcher": {
-      "type": "development",
+      "type": "default",
       "eventSources": {
-        "default": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/lib/event-sources/default",
-        "development": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher/lib/event-sources/development"
+        "default": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/lib/event-sources/development"
+      }
+    },
+    "customLogger": {
+      "scheduleLogger": {
+        "consoleLevel": "NONE",
+        "file": "/Users/wecloud/logs/server/egg-schedule.log"
       }
     },
     "multipart": {
+      "mode": "stream",
       "autoFields": false,
       "defaultCharset": "utf8",
       "fieldNameSize": 100,
@@ -120,13 +133,11 @@
       "fileSize": 10485760,
       "files": 10,
       "fileExtensions": [],
-      "whitelist": null
-    },
-    "development": {
-      "watchDirs": [],
-      "ignoreDirs": [],
-      "fastReady": false,
-      "reloadOnDebug": true
+      "whitelist": null,
+      "tmpdir": "/var/folders/5s/96yrf4f12698gzxc9tfcjv0r0000gn/T/egg-multipart-tmp/server",
+      "cleanSchedule": {
+        "cron": "0 30 4 * * *"
+      }
     },
     "logrotator": {
       "filesRotateByHour": null,
@@ -143,44 +154,76 @@
       "dir": "/Users/wecloud/WebstormProjects/examples/super_app/app/public",
       "dynamic": true,
       "preload": false,
-      "buffer": false,
+      "buffer": true,
       "maxFiles": 1000,
+      "maxAge": 31536000,
       "files": "<LRU>"
     },
     "view": {
       "root": "/Users/wecloud/WebstormProjects/examples/super_app/app/view",
-      "cache": false,
+      "cache": true,
       "defaultExtension": ".html",
       "defaultViewEngine": "",
       "mapping": {}
     },
-    "env": "local",
-    "name": "static-example",
+    "env": "prod",
+    "name": "server",
     "keys": "<String len: 20>",
     "proxy": false,
     "protocolHeaders": "x-forwarded-proto",
     "ipHeaders": "x-forwarded-for",
     "hostHeaders": "",
     "pkg": {
-      "name": "static-example",
+      "name": "server",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
       "dependencies": {
-        "egg": "^1.10.1",
-        "egg-scripts": "^2.6.0"
+        "egg": "^2.2.1",
+        "egg-alinode": "^2.0.1",
+        "egg-cors": "^2.0.0",
+        "egg-scripts": "^2.5.0",
+        "egg-sequelize": "^3.1.2",
+        "js-md5": "^0.7.3",
+        "mysql2": "^1.5.2"
       },
       "devDependencies": {
+        "autod": "^3.0.1",
+        "autod-egg": "^1.0.0",
         "egg-bin": "^4.3.5",
-        "egg-mock": "^3.13.1",
-        "eslint": "^5.1.0",
-        "eslint-config-egg": "^7.0.0"
+        "egg-ci": "^1.8.0",
+        "egg-mock": "^3.14.0",
+        "eslint": "^4.11.0",
+        "eslint-config-egg": "^6.0.0",
+        "webstorm-disable-index": "^1.2.0"
+      },
+      "engines": {
+        "node": ">=8.9.0"
       },
       "scripts": {
-        "dev": "egg-bin dev --port=8080",
-        "test": "egg-bin test",
+        "start": "egg-scripts start --daemon --env=prod --port=7002 --title=egg-server-blog",
+        "stop": "egg-scripts stop --title=egg-server-blog",
+        "dev": "egg-bin dev",
+        "debug": "egg-bin debug",
+        "test": "npm run lint -- --fix && npm run test-local",
+        "test-local": "egg-bin test",
         "cov": "egg-bin cov",
-        "start": "egg-scripts start --daemon ",
-        "stop": "egg-scripts stop"
+        "lint": "eslint .",
+        "ci": "npm run lint && npm run cov",
+        "autod": "autod",
+        "migrate:new": "egg-sequelize migration:create",
+        "migrate:up": "egg-sequelize db:migrate",
+        "migrate:down": "egg-sequelize db:migrate:undo"
       },
-      "private": true
+      "ci": {
+        "version": "8"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/k-water/egg-blog.git"
+      },
+      "author": "k-water",
+      "license": "MIT"
     },
     "baseDir": "/Users/wecloud/WebstormProjects/examples/super_app",
     "HOME": "/Users/wecloud",
@@ -199,7 +242,7 @@
       "pageUrl": ""
     },
     "siteFile": {
-      "/favicon.ico": "<Buffer len: 14191>"
+      "/favicon.ico": "<Buffer len: 6463>"
     },
     "bodyParser": {
       "enable": true,
@@ -217,41 +260,47 @@
     "logger": {
       "dir": "/Users/wecloud/WebstormProjects/examples/super_app/logs",
       "encoding": "utf-8",
-      "env": "local",
+      "env": "prod",
       "level": "INFO",
       "consoleLevel": "NONE",
-      "disableConsoleAfterReady": false,
+      "disableConsoleAfterReady": true,
       "outputJSON": false,
       "buffer": true,
-      "appLogName": "static-example-web.log",
+      "appLogName": "server-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {
-        "consoleLevel": "WARN"
-      },
-      "allowDebugAtProd": true,
+      "coreLogger": {},
+      "allowDebugAtProd": false,
       "type": "application"
     },
     "httpclient": {
       "enableDNSCache": false,
+      "dnsCacheLookupInterval": 10000,
       "dnsCacheMaxLength": 1000,
-      "dnsCacheMaxAge": 10000,
       "request": {
         "timeout": 5000
       },
       "httpAgent": {
         "keepAlive": true,
-        "freeSocketKeepAliveTimeout": 4000,
+        "freeSocketTimeout": 4000,
         "maxSockets": 9007199254740991,
-        "maxFreeSockets": 256
+        "maxFreeSockets": 256,
+        "timeout": 30000,
+        "socketActiveTTL": 0
       },
       "httpsAgent": {
         "keepAlive": true,
-        "freeSocketKeepAliveTimeout": 4000,
+        "freeSocketTimeout": 4000,
         "maxSockets": 9007199254740991,
-        "maxFreeSockets": 256
+        "maxFreeSockets": 256,
+        "timeout": 30000,
+        "socketActiveTTL": 0
       }
+    },
+    "meta": {
+      "enable": true,
+      "logging": false
     },
     "coreMiddleware": [
       "report",
@@ -266,6 +315,7 @@
       "i18n"
     ],
     "workerStartTimeout": 600000,
+    "serverTimeout": null,
     "cluster": {
       "listen": {
         "path": "",
@@ -277,6 +327,7 @@
       "maxWaitTime": 60000,
       "responseTimeout": 60000
     },
+    "onClientError": null,
     "middleware": [
       "gzip",
       "compress"
@@ -309,9 +360,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-session@2.2.0@egg-session",
-      "version": "2.2.0"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session",
+      "version": "3.1.0"
     },
     "security": {
       "enable": true,
@@ -322,9 +373,9 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-security@1.13.2@egg-security",
-      "version": "1.13.2"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security",
+      "version": "2.4.1"
     },
     "jsonp": {
       "enable": true,
@@ -335,9 +386,9 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-jsonp@1.2.2@egg-jsonp",
-      "version": "1.2.2"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jsonp",
+      "version": "2.0.0"
     },
     "onerror": {
       "enable": true,
@@ -348,9 +399,9 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-onerror@1.6.0@egg-onerror",
-      "version": "1.6.0"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror",
+      "version": "2.1.0"
     },
     "i18n": {
       "enable": true,
@@ -359,9 +410,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-i18n@1.2.0@egg-i18n",
-      "version": "1.2.0"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n",
+      "version": "2.0.0"
     },
     "watcher": {
       "enable": true,
@@ -370,35 +421,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-watcher@2.2.0@egg-watcher",
-      "version": "2.2.0"
-    },
-    "multipart": {
-      "enable": true,
-      "package": "egg-multipart",
-      "name": "multipart",
-      "dependencies": [],
-      "optionalDependencies": [],
-      "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-multipart@1.5.1@egg-multipart",
-      "version": "1.5.1"
-    },
-    "development": {
-      "enable": true,
-      "package": "egg-development",
-      "name": "development",
-      "dependencies": [
-        "watcher"
-      ],
-      "optionalDependencies": [],
-      "env": [
-        "local"
-      ],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-development@1.4.2@egg-development",
-      "version": "1.4.2"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher",
+      "version": "3.1.0"
     },
     "schedule": {
       "enable": true,
@@ -407,9 +432,22 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-schedule@2.6.0@egg-schedule",
-      "version": "2.6.0"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-schedule",
+      "version": "3.5.0"
+    },
+    "multipart": {
+      "enable": true,
+      "package": "egg-multipart",
+      "name": "multipart",
+      "dependencies": [],
+      "optionalDependencies": [
+        "schedule"
+      ],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart",
+      "version": "2.3.0"
     },
     "logrotator": {
       "enable": true,
@@ -420,9 +458,9 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-logrotator@2.3.2@egg-logrotator",
-      "version": "2.3.2"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-logrotator",
+      "version": "3.0.5"
     },
     "static": {
       "enable": true,
@@ -431,9 +469,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-static@1.5.1@egg-static",
-      "version": "1.5.1"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-static",
+      "version": "2.1.1"
     },
     "view": {
       "enable": true,
@@ -442,9 +480,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg@1.15.2@egg/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-view@1.2.0@egg-view",
-      "version": "1.2.0"
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view",
+      "version": "2.1.0"
     }
   }
 }
