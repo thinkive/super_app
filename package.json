@@ -1,0 +1,21 @@
+{
+  "name": "static-example",
+  "dependencies": {
+    "egg": "^1.10.1",
+    "egg-scripts": "^2.6.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.5",
+    "egg-mock": "^3.13.1",
+    "eslint": "^5.1.0",
+    "eslint-config-egg": "^7.0.0"
+  },
+  "scripts": {
+    "dev": "egg-bin dev --port=8080",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov",
+    "start": "egg-scripts start --daemon ",
+    "stop": "egg-scripts stop"
+  },
+  "private": true
+}
