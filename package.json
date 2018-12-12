@@ -10,6 +10,7 @@
     "egg-scripts": "^2.5.0",
     "egg-sequelize": "^3.1.2",
     "js-md5": "^0.7.3",
+    "koa-compress": "^3.0.0",
     "mysql2": "^1.5.2"
   },
   "devDependencies": {

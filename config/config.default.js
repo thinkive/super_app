@@ -62,7 +62,7 @@ module.exports = appInfo => {
       dialectOptions: {
         charset: 'utf8mb4',
       },
-      database: 'egg_db',
+      database: 'blog',
       host: '115.29.145.75',
       port: '3306',
       username: 'root',
@@ -77,11 +77,6 @@ module.exports = appInfo => {
     },
     cors: {
       credentials: true,
-    },
-    alinode: {
-      enable: true,
-      appid: 'your appid',
-      secret: 'your secret',
-    },
+    }
   };
 };
