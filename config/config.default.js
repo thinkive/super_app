@@ -80,6 +80,22 @@ module.exports = appInfo => {
     },
     cors: {
       credentials: true,
+    },
+    session: { // 默认配置如下
+      key: 'EGG_SESS',
+      maxAge: 24 * 3600 * 1000, // 1 天
+      httpOnly: true,
+      encrypt: true,
+      renew: true,// 延长会话，默认false
+    },
+    redis: {
+      client: {
+        host: '115.29.145.75',
+        port: '6379',
+        password: '217891qqqq',
+        db: '1',// 默认0
+      },
+      agent:true
     }
   };
 };

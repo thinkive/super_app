@@ -114,17 +114,18 @@ class UserService extends Service {
         ctx.status = 200;
         const hash = md5.hex(password)
         ctx.cookies.set('token', hash, {
-          httpOnly: false,
-          signed: false,
+          httpOnly: true,
+          signed: true, // 默认为true，设置为false后，无法通过ctx.cookies.get方式获取
           maxAge: 3600 * 1000,
           path: '/',
         });
         ctx.cookies.set('user_id', user.id, {
-          httpOnly: false,
-          signed: false,
+          httpOnly: true,
+          signed: true,
           maxAge: 3600 * 1000,
           path: '/',
         });
+        ctx.session.user = user
         return Object.assign(SUCCESS, {
           data: Object.assign(user, {
             password: '',

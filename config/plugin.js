@@ -14,3 +14,12 @@ exports.cors = {
 //   enable: true,
 //   package: 'egg-alinode',
 // };
+exports.sessionRedis = {
+  enable: true,
+  package: 'egg-session-redis',
+};
+
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};
