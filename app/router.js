@@ -9,4 +9,5 @@ module.exports = app => {
   require('./router/comment')(app);
   require('./router/catalog')(app);
   require('./router/collect')(app);
+  require('./router/post')(app);
 };

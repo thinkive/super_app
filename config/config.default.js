@@ -96,6 +96,14 @@ module.exports = appInfo => {
         db: '1',// 默认0
       },
       agent:true
+    },
+    mongoose: {
+      url: 'mongodb://115.29.145.75:27017/admin',
+      options: {
+        server: {
+          poolSize: 20
+        },
+      },
     }
   };
 };
