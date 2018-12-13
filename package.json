@@ -10,7 +10,7 @@
     "egg-mongoose": "^3.1.1",
     "egg-redis": "^2.2.0",
     "egg-scripts": "^2.5.0",
-    "egg-sequelize": "^3.1.2",
+    "egg-sequelize": "^4.2.0",
     "egg-session-redis": "^2.1.0",
     "js-md5": "^0.7.3",
     "koa-compress": "^3.0.0",
@@ -30,9 +30,9 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --env=prod --port=7002 --title=egg-server-blog",
+    "start": "egg-scripts start --daemon --env=prod --port=7003 --title=egg-server-blog",
     "stop": "egg-scripts stop --title=egg-server-blog",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev  --port=7003",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

@@ -1,7 +1,6 @@
 'use strict';
 module.exports = app => {
   const mongoose = app.mongoose;
-  console.log(app)
   const Schema = mongoose.Schema;
   const PostSchema = new Schema({
     title: {

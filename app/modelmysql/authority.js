@@ -7,7 +7,7 @@ module.exports = app => {
     DATE,
   } = app.Sequelize;
 
-  const Authority = app.model.define('authority', {
+  const Authority = app.modelmysql.define('authority', {
     id: {
       type: INTEGER,
       primaryKey: true,
@@ -21,7 +21,7 @@ module.exports = app => {
   });
 
   Authority.associate = function() {
-    app.model.Authority.hasMany(app.model.User);
+    app.modelmysql.Authority.hasMany(app.modelmysql.User);
   };
 
 

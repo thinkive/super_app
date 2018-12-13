@@ -7,7 +7,7 @@ module.exports = app => {
     DATE,
   } = app.Sequelize;
 
-  const Comment = app.model.define('comment', {
+  const Comment = app.modelmysql.define('comment', {
     id: {
       type: INTEGER,
       primaryKey: true,
@@ -21,8 +21,8 @@ module.exports = app => {
   });
 
   Comment.associate = function() {
-    app.model.Comment.belongsTo(app.model.User);
-    app.model.Comment.belongsTo(app.model.Blog);
+    app.modelmysql.Comment.belongsTo(app.modelmysql.User);
+    app.modelmysql.Comment.belongsTo(app.modelmysql.Blog);
   };
 
   return Comment;

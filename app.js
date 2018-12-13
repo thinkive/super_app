@@ -4,7 +4,7 @@ module.exports = app => {
   // 注意：在 beforeStart 中不建议做太耗时的操作，框架会有启动的超时检测。
   app.beforeStart(async () => {
     // 启动的时候创建表
-		await app.model.sync({
+		await app.modelmysql.sync({
 			force: false,
 		})
     // 应用会等待这个函数执行完成才启动

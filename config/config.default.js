@@ -51,8 +51,6 @@ module.exports = appInfo => {
       match(ctx) {
         // 只有 ios 设备才开启
         const reg = /iphone|ipad|ipod/i;
-        console.log(11111)
-        console.log(reg.test(ctx.get('user-agent')))
         return reg.test(ctx.get('user-agent'));
       },
       threshold: 1024, // 小于 1k 的响应体不压缩
@@ -61,6 +59,8 @@ module.exports = appInfo => {
       threshold: 1024
     },
     sequelize: {
+			delegate: 'modelmysql',
+			baseDir: 'modelmysql',
       dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
       dialectOptions: {
         charset: 'utf8mb4',
@@ -98,12 +98,7 @@ module.exports = appInfo => {
       agent:true
     },
     mongoose: {
-      url: 'mongodb://115.29.145.75:27017/admin',
-      options: {
-        server: {
-          poolSize: 20
-        },
-      }
+      url: 'mongodb://115.29.145.75:27017/admin'
     }
   };
 };

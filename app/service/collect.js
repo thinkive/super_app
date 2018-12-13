@@ -11,7 +11,7 @@ class CollectService extends Service {
       ctx,
     } = this;
     try {
-      const created = await ctx.model.Collect.create(collect);
+      const created = await ctx.modelmysql.Collect.create(collect);
       ctx.status = 201;
       return Object.assign(SUCCESS, {
         data: created,
@@ -39,7 +39,7 @@ class CollectService extends Service {
       ],
     };
     try {
-      const res = await ctx.model.Collect.findAndCountAll(options);
+      const res = await ctx.modelmysql.Collect.findAndCountAll(options);
       return Object.assign(SUCCESS, {
         data: res,
       });
@@ -54,7 +54,7 @@ class CollectService extends Service {
       ctx,
     } = this;
     try {
-      const collect = await ctx.model.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id);
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',
@@ -75,7 +75,7 @@ class CollectService extends Service {
       ctx,
     } = this;
     try {
-      const collect = await ctx.model.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id);
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',
@@ -99,7 +99,7 @@ class CollectService extends Service {
       ctx,
     } = this;
     try {
-      const collect = await ctx.model.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id);
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',

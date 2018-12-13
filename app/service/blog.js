@@ -12,7 +12,7 @@ class BlogService extends Service {
       ctx,
     } = this;
     try {
-      const res = await this.ctx.model.Blog.create(blog);
+      const res = await this.ctx.modelmysql.Blog.create(blog);
       return Object.assign({
         data: res,
       }, SUCCESS);
@@ -52,17 +52,17 @@ class BlogService extends Service {
         catalog_id: parseInt(catalog_id, 10),
       };
     }
-    const res = await this.ctx.model.Blog.findAndCountAll(Object.assign(options, {
+    const res = await this.ctx.modelmysql.Blog.findAndCountAll(Object.assign(options, {
       include: [{
-        model: this.ctx.model.User,
+        model: this.ctx.modelmysql.User,
         as: 'user',
         attributes: [ 'id', 'username' ],
         include: [{
-          model: this.ctx.model.Authority,
+          model: this.ctx.modelmysql.Authority,
           attributes: [ 'id', 'name' ],
         }],
       }, {
-        model: this.ctx.model.Catalog,
+        model: this.ctx.modelmysql.Catalog,
         as: 'catalog',
       }],
     }));
@@ -75,7 +75,7 @@ class BlogService extends Service {
     id,
     user_id,
   }) {
-    const blog = await this.ctx.model.Blog.findById(id);
+    const blog = await this.ctx.modelmysql.Blog.findById(id);
     if (!blog) {
       return Object.assign({
         error_msg: 'blog not found',
@@ -95,7 +95,7 @@ class BlogService extends Service {
     user_id,
     updates,
   }) {
-    const blog = await this.ctx.model.Blog.findById(id);
+    const blog = await this.ctx.modelmysql.Blog.findById(id);
     if (!blog) {
       return Object.assign(ERROR, {
         msg: 'blog not found',
@@ -111,29 +111,29 @@ class BlogService extends Service {
   }
 
   async find(id) {
-    const blog = await this.ctx.model.Blog.findById(id, {
+    const blog = await this.ctx.modelmysql.Blog.findById(id, {
       include: [{
-        model: this.ctx.model.User,
+        model: this.ctx.modelmysql.User,
         as: 'user',
         attributes: [ 'id', 'username' ],
         include: [{
-          model: this.ctx.model.Authority,
+          model: this.ctx.modelmysql.Authority,
           attributes: [ 'id', 'name' ],
         }],
       }, {
-        model: this.ctx.model.Comment,
+        model: this.ctx.modelmysql.Comment,
         as: 'comment',
         attributes: [ 'id', 'content', 'created_at', 'updated_at' ],
         include: [{
-          model: this.ctx.model.User,
+          model: this.ctx.modelmysql.User,
           attributes: [ 'username' ],
         }],
       }, {
-        model: this.ctx.model.Catalog,
+        model: this.ctx.modelmysql.Catalog,
         as: 'catalog',
         attributes: [ 'id', 'name', 'created_at', 'updated_at' ],
         include: [{
-          model: this.ctx.model.User,
+          model: this.ctx.modelmysql.User,
           attributes: [ 'username' ],
         }],
       }],
@@ -154,17 +154,17 @@ class BlogService extends Service {
   }
 
   async edit(id) {
-    const blog = await this.ctx.model.Blog.findById(id, {
+    const blog = await this.ctx.modelmysql.Blog.findById(id, {
       include: [{
-        model: this.ctx.model.User,
+        model: this.ctx.modelmysql.User,
         as: 'user',
         attributes: [ 'id', 'username' ],
         include: [{
-          model: this.ctx.model.Authority,
+          model: this.ctx.modelmysql.Authority,
           attributes: [ 'id', 'name' ],
         }],
       }, {
-        model: this.ctx.model.Catalog,
+        model: this.ctx.modelmysql.Catalog,
         as: 'catalog',
       }],
     });

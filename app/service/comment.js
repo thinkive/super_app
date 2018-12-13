@@ -25,13 +25,13 @@ class CommentService extends Service {
           })}`,
         });
       }
-      const res = await ctx.model.Comment.create({
+      const res = await ctx.modelmysql.Comment.create({
         user_id,
         blog_id,
         content,
       });
       ctx.status = 201;
-      const blog = await ctx.model.Blog.findById(blog_id);
+      const blog = await ctx.modelmysql.Blog.findById(blog_id);
       blog.increment('commentSize').then().catch(err => {
         console.log(err);
       });
@@ -53,8 +53,8 @@ class CommentService extends Service {
       ctx,
     } = this;
     try {
-      const comment = await ctx.model.Comment.findById(id);
-      const user = await ctx.model.User.findById(user_id);
+      const comment = await ctx.modelmysql.Comment.findById(id);
+      const user = await ctx.modelmysql.User.findById(user_id);
       if (!comment) {
         ctx.status = 400;
         return Object.assign(ERROR, {
@@ -67,7 +67,7 @@ class CommentService extends Service {
           msg: 'you can not delete others comment',
         });
       }
-      const blog = await ctx.model.Blog.findById(comment.blog_id);
+      const blog = await ctx.modelmysql.Blog.findById(comment.blog_id);
       const res = await comment.destroy();
       blog.decrement('commentSize').then().catch(err => {
         console.log(err);

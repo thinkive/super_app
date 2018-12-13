@@ -6,7 +6,7 @@ module.exports = app => {
     STRING,
     DATE,
   } = app.Sequelize;
-  const Collect = app.model.define('collect', {
+  const Collect = app.modelmysql.define('collect', {
     id: {
       type: INTEGER,
       primaryKey: true,

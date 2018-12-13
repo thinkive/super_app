@@ -11,7 +11,7 @@ class CatalogService extends Service {
       ctx,
     } = this;
     try {
-      const res = await ctx.model.Catalog.create(catalog);
+      const res = await ctx.modelmysql.Catalog.create(catalog);
       ctx.status = 201;
       return Object.assign(SUCCESS, {
         data: res,
@@ -27,7 +27,7 @@ class CatalogService extends Service {
       ctx,
     } = this;
     try {
-      const catalog = await ctx.model.Catalog.findById(id);
+      const catalog = await ctx.modelmysql.Catalog.findById(id);
       if (!catalog) {
         ctx.status = 400;
         return Object.assign(ERROR, {
@@ -53,7 +53,7 @@ class CatalogService extends Service {
       ctx,
     } = this;
     try {
-      const res = await ctx.model.Catalog.findAndCountAll({
+      const res = await ctx.modelmysql.Catalog.findAndCountAll({
         order: [
           [ order_by, order.toUpperCase() ],
         ],
@@ -76,7 +76,7 @@ class CatalogService extends Service {
       ctx,
     } = this;
     try {
-      const catalog = await ctx.model.Catalog.findById(id);
+      const catalog = await ctx.modelmysql.Catalog.findById(id);
       if (!catalog) {
         ctx.status = 400;
         return Object.assign(ERROR, {
@@ -99,7 +99,7 @@ class CatalogService extends Service {
       ctx,
     } = this;
     try {
-      const catalog = await ctx.model.Catalog.findById(id);
+      const catalog = await ctx.modelmysql.Catalog.findById(id);
       if (!catalog) {
         ctx.status = 400;
         return Object.assign(ERROR, {

@@ -22,13 +22,13 @@ class UserService extends Service {
       user = Object.assign(user, {
         password: md5Passwd,
       });
-      const userDB = await ctx.model.User.findOne({
+      const userDB = await ctx.modelmysql.User.findOne({
         where: {
           username: user.username,
         },
       });
       if (!userDB) {
-        const res = await this.ctx.model.User.create(user);
+        const res = await this.ctx.modelmysql.User.create(user);
         ctx.status = 201;
         return Object.assign(SUCCESS, {
           data: res,
@@ -50,7 +50,7 @@ class UserService extends Service {
       ctx,
     } = this;
     try {
-      const user = await ctx.model.User.findById(id);
+      const user = await ctx.modelmysql.User.findById(id);
       if (!user) {
         ctx.status = 400;
         return Object.assign(ERROR, {
@@ -73,7 +73,7 @@ class UserService extends Service {
       ctx,
     } = this;
     try {
-      const userDB = await ctx.model.User.findById(id);
+      const userDB = await ctx.modelmysql.User.findById(id);
       if (!userDB) {
         ctx.status = 400;
         return Object.assign(ERROR, {
@@ -100,7 +100,7 @@ class UserService extends Service {
       ctx,
     } = this;
     try {
-      const user = await ctx.model.User.findOne({
+      const user = await ctx.modelmysql.User.findOne({
         where: {
           username: username.toString()
         },
@@ -148,9 +148,9 @@ class UserService extends Service {
       ctx,
     } = this;
     try {
-      const user = await ctx.model.User.findById(id, {
+      const user = await ctx.modelmysql.User.findById(id, {
         include: [{
-          model: ctx.model.Authority,
+          model: ctx.modelmysql.Authority,
           attributes: [ 'id', 'name' ],
         }],
       });

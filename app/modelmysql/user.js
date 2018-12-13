@@ -7,7 +7,7 @@ module.exports = app => {
     DATE,
   } = app.Sequelize;
 
-  const User = app.model.define('user', {
+  const User = app.modelmysql.define('user', {
     id: {
       type: INTEGER,
       primaryKey: true,
@@ -24,16 +24,16 @@ module.exports = app => {
   });
 
   User.associate = function() {
-    app.model.User.hasMany(app.model.Blog, {
+    app.modelmysql.User.hasMany(app.modelmysql.Blog, {
       as: 'blogs',
     });
-    app.model.User.hasMany(app.model.Catalog, {
+    app.modelmysql.User.hasMany(app.modelmysql.Catalog, {
       as: 'catalogs',
     });
-    app.model.User.hasMany(app.model.Comment, {
+    app.modelmysql.User.hasMany(app.modelmysql.Comment, {
       as: 'comments',
     });
-    app.model.User.belongsTo(app.model.Authority);
+    app.modelmysql.User.belongsTo(app.modelmysql.Authority);
   };
 
   return User;
