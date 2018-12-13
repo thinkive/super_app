@@ -17,7 +17,7 @@ module.exports = appInfo => {
   // console.log(appInfo.root)
 
   return {
-    middleware: [ 'gzip', 'compress' ],
+    middleware: [ 'gzip'],//gzip和compress不能同时使用
 
     keys: appInfo.name + '_1520690141955_3949',
     // 日志分为 NONE，DEBUG，INFO，WARN 和 ERROR 5 个级别 ,
@@ -43,7 +43,6 @@ module.exports = appInfo => {
       //     path.join(appInfo.root, 'logs', appInfo.name, 'common-error.log'),
       // ],
     },
-
     // 配置 gzip 中间件的配置
     // enable：控制中间件是否开启。
     // match：设置只有符合某些规则的请求才会经过这个中间件。
@@ -52,10 +51,14 @@ module.exports = appInfo => {
       match(ctx) {
         // 只有 ios 设备才开启
         const reg = /iphone|ipad|ipod/i;
+        console.log(11111)
+        console.log(reg.test(ctx.get('user-agent')))
         return reg.test(ctx.get('user-agent'));
       },
-
       threshold: 1024, // 小于 1k 的响应体不压缩
+    },
+    compress: {
+      threshold: 1024
     },
     sequelize: {
       dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
