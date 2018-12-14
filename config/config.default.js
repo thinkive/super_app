@@ -76,11 +76,30 @@ module.exports = appInfo => {
         underscored: true,
       }
     },
+    mysql:{
+      // database configuration
+      client: {
+        // host
+        host: '115.29.145.75',
+        // port
+        port: '3306',
+        // username
+        user: 'root',
+        // password
+        password: '217891qqqq',
+        // database
+        database: 'blog',
+      },
+      // load into app, default is open
+      app: true,
+      // load into agent, default is close
+      agent: false,
+    },
     security: {
       csrf: {
         enable: false,// 临时关闭csrf验证
       },
-      domainWhiteList: [ 'http://119.29.151.195' ],
+      domainWhiteList: [ 'http://127.0.0.1' ], // 跨域请求白名单
     },
     cors: {
       credentials: true,

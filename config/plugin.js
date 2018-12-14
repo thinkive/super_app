@@ -38,3 +38,7 @@ exports.nunjucks = {
 exports.multipart = {
   fileSize: '50mb', // 默认10M
 };
+exports.mysql = {
+  enable: true,
+  package: 'egg-mysql',
+};

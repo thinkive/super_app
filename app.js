@@ -25,6 +25,8 @@ module.exports = app => {
     // 也可以通过以下方式来调用 Service
     // const ctx = app.createAnonymousContext();
     // app.cities = await ctx.service.cities.load();
+
+    // app.runSchedule('update_cache'); // 启动的时候自动启动定时任务
   });
 
   app.once('server', server => {

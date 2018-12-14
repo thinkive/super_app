@@ -154,6 +154,10 @@ class BlogService extends Service {
   }
 
   async edit(id) {
+
+    //test mysql获取数据
+    const post = await this.ctx.mysql.get('blogs', { id: 4 });
+    console.log(post)
     const blog = await this.ctx.modelmysql.Blog.findById(id, {
       include: [{
         model: this.ctx.modelmysql.User,

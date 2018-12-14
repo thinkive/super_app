@@ -14,6 +14,8 @@ class Home extends Controller {
     this.logger.error(new Error('whoops'));
 
     this.logger.info('~~~~~~~~~~~ service/control this.logger.info ~~~~~~~~~~~~~~~~~~~~~')
+
+
     ctx.body = `<ul>
       <li>Download <a href="/public/hi.txt">hi.txt</a>.</li>
       <li>Download <a href="/public/404.txt">404.txt</a>.</li>
