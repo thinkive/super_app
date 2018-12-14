@@ -17,7 +17,6 @@ module.exports = app => {
     });
     app.cities = result.data
     console.log('~~~~~~~~系统当前运行环境:~~~~~~~~~~~~~~~~~~~~~~~' + app.config.env)
-    console.log('~~~~~~~~keys:~~~~~~~~~~~~~~~~~~~~~~~' + app.config.keys)
     app.logger.error('~~~~~~~~~~~app.logger.error~~~~~~~~~~~~' + app.config.keys)
     app.logger.debug('~~~~~~~~~~~app.logger.debug~~~~~~~~~~~~' + app.config.keys)
     app.logger.warn('~~~~~~~~~~~app.logger.warn~~~~~~~~~~~~' + app.config.keys)

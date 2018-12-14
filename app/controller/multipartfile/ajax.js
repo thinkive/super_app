@@ -7,12 +7,10 @@ const pump = require('mz-modules/pump');
 
 module.exports = class extends Controller {
   async show() {
-    console.log('file')
     await this.ctx.render('upload/file/page/ajax.html');
   }
 
   async upload() {
-    console.log('upload')
     const { ctx } = this;
     const file = ctx.request.files[0];
     if (!file) return ctx.throw(404);

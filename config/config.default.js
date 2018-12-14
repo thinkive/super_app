@@ -23,8 +23,8 @@ module.exports = appInfo => {
     // 默认只会输出 INFO 及以上（WARN 和 ERROR）的日志到文件中。
     logger: {
       encoding: 'utf-8', // 默认
-      level: 'INFO',// 默认
-      consoleLevel: 'NONE', // 打开终端日志 默认
+      level: 'INFO',// // 默认只会输出 INFO 及以上（WARN 和 ERROR的日志到终端中，NONE关闭日志 ，DEBUG 打印所有
+      consoleLevel: 'DEBUG', // 默认只会输出 INFO 及以上（WARN 和 ERROR的日志到终端中
       dir: path.join(appInfo.baseDir, 'logs'),
       appLogName: `${appInfo.name}-web.log`,
       coreLogName: 'egg-web.log',
@@ -120,6 +120,11 @@ module.exports = appInfo => {
       // whitelist: [ // 重写白名单，只允许png格式
       //   '.png ',
       // ]
+    },
+    alinode:{
+      // 从 `Node.js 性能平台` 获取对应的接入参数
+      appid: '77534',
+      secret: 'e2300b3052f6ea8cba93b7629dd0e3307b3064d0',
     }
   };
 };

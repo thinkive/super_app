@@ -4,11 +4,15 @@ const Controller = require('egg').Controller;
 
 class Home extends Controller {
   async render() {
-  	console.log(111)
     const ctx = this.ctx;
     this.logger.info('~~~~~~~~~~~~~~页面get参数~~~~~~~~' + ctx.request.query.id + '|' + ctx.query.id)
     this.logger.info('~~~~~~~~~~~~~~helper~~~~~~~~~~~~~~' + ctx.helper.formatUser(ctx.query.id))
     this.logger.info('~~~~~~~~~~~~~~this.config~~~~~~~~~~~~~~' + this.config.keys)
+    this.logger.debug('debug info');
+    this.logger.info('some request data: %j', ctx.request.body);
+    this.logger.warn('WARNNING!!!!');
+    this.logger.error(new Error('whoops'));
+
     this.logger.info('~~~~~~~~~~~ service/control this.logger.info ~~~~~~~~~~~~~~~~~~~~~')
     ctx.body = `<ul>
       <li>Download <a href="/public/hi.txt">hi.txt</a>.</li>

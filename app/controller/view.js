@@ -6,8 +6,6 @@ class ViewController extends Controller {
     const {
       ctx,
     } = this;
-    console.log('调用了api/blog')
-    console.log(ctx.session);
     const data = { testData: 'egg', testData2: {test: 1} };
 
     // render a template, path relate to `app/view`

@@ -49,7 +49,6 @@ class UserController extends Controller {
       },
     };
     // 如果校验报错，会抛出异常
-    console.log(username)
     try {
       ctx.validate(createRule);
       ctx.body = await ctx.service.user.login({
@@ -58,7 +57,6 @@ class UserController extends Controller {
       });
     } catch (e) {
       console.log(e.errors[0].message)
-      console.log(e.errors)
     }
   }
 

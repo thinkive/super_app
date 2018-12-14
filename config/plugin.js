@@ -10,10 +10,10 @@ exports.cors = {
   enable: true,
   package: 'egg-cors',
 };
-// exports.alinode = {
-//   enable: true,
-//   package: 'egg-alinode',
-// };
+exports.alinode = {
+  enable: true,
+  package: 'egg-alinode',
+};
 exports.sessionRedis = {
   enable: true,
   package: 'egg-session-redis',
