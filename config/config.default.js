@@ -125,6 +125,16 @@ module.exports = appInfo => {
       // 从 `Node.js 性能平台` 获取对应的接入参数
       appid: '77534',
       secret: 'e2300b3052f6ea8cba93b7629dd0e3307b3064d0',
+    },
+    i18n: {
+      // 默认语言，默认 "en_US"
+      defaultLocale: 'zh-CN',
+      // URL 参数，默认 "locale"
+      queryField: 'locale',
+      // Cookie 记录的 key, 默认："locale"
+      cookieField: 'locale',
+      // Cookie 默认 `1y` 一年后过期， 如果设置为 Number，则单位为 ms
+      cookieMaxAge: '1y',
     }
   };
 };
