@@ -10,4 +10,6 @@ module.exports = app => {
   require('./router/catalog')(app);
   require('./router/collect')(app);
   require('./router/post')(app);
+  // require('./router/multipart-stream')(app);
+  require('./router/multipart-file')(app);
 };

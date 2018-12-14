@@ -18,7 +18,6 @@ module.exports = appInfo => {
 
   return {
     middleware: [ 'gzip'],//gzip和compress不能同时使用
-
     keys: appInfo.name + '_1520690141955_3949',
     // 日志分为 NONE，DEBUG，INFO，WARN 和 ERROR 5 个级别 ,
     // 默认只会输出 INFO 及以上（WARN 和 ERROR）的日志到文件中。
@@ -71,10 +70,15 @@ module.exports = appInfo => {
       username: 'root',
       password: '217891qqqq',
       timezone: '+08:00',
+      benchmark: true,
+      define: {
+        freezeTableName: false,
+        underscored: true,
+      }
     },
     security: {
       csrf: {
-        enable: false,
+        enable: false,// 临时关闭csrf验证
       },
       domainWhiteList: [ 'http://119.29.151.195' ],
     },
@@ -99,6 +103,23 @@ module.exports = appInfo => {
     },
     mongoose: {
       url: 'mongodb://115.29.145.75:27017/admin'
+    },
+    view: {
+      defaultViewEngine: 'nunjucks',
+      mapping: {
+        '.nj': 'nunjucks',
+      },
+    },
+    multipart: {
+      // will append to whilelist
+      fileExtensions: [
+        '.foo',
+        '.apk',
+      ],
+      // mode: 'file',// 默认是stream模式
+      // whitelist: [ // 重写白名单，只允许png格式
+      //   '.png ',
+      // ]
     }
   };
 };

@@ -21,6 +21,7 @@ class BlogController extends Controller {
     console.log('调用了api/blog')
     console.log(ctx.session);
     const res = await ctx.service.blog.index(ctx.query);
+
     ctx.body = res;
   }
 

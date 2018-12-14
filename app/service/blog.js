@@ -184,7 +184,7 @@ class BlogService extends Service {
       ctx,
     } = this;
     try {
-      const res = await ctx.model.Blog.findAndCountAll({
+      const res = await ctx.modelmysql.Blog.findAndCountAll({
         attributes: [ 'tags' ],
       });
       const arrTag = [];
@@ -214,7 +214,7 @@ class BlogService extends Service {
           msg: 'expected an param with year, password but got null',
         });
       }
-      const blogs = await ctx.model.Blog.findAndCountAll({
+      const blogs = await ctx.modelmysql.Blog.findAndCountAll({
         where: {
           created_at: {
             [Op.between]: [ new Date(`${year}-1-1`), new Date(`${year}-12-31 23:59`) ],

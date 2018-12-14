@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+ <body>
+ child page
+ {{ testData }}
+ {{ testData2["test"] }}
+</body>
+</html>

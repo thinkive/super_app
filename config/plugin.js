@@ -27,3 +27,14 @@ exports.mongoose = {
   enable: true,
   package: 'egg-mongoose',
 };
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
+};
+exports.nunjucks = {
+  enable: true,
+  package: 'egg-view-nunjucks',
+};
+exports.multipart = {
+  fileSize: '50mb', // 默认10M
+};

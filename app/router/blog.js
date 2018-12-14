@@ -9,4 +9,5 @@ module.exports = app => {
   app.del('/api/users/:user_id/blog/:id', 'blog.destroy');
   app.put('/api/users/:user_id/blog/:id', 'blog.update');
   app.get('/api/archive', 'blog.archive');
+  app.get('/api/view', 'view.index'); // 测试模板渲染
 };
