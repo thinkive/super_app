@@ -7,6 +7,7 @@
     "egg": "^2.2.1",
     "egg-alinode": "^2.0.1",
     "egg-cors": "^2.0.0",
+    "egg-jwt": "^3.1.4",
     "egg-mongoose": "^3.1.1",
     "egg-mysql": "^3.0.0",
     "egg-redis": "^2.2.0",

@@ -12,4 +12,7 @@ module.exports = app => {
   require('./router/post')(app);
   // require('./router/multipart-stream')(app);
   require('./router/multipart-file')(app);
+	app.get("/jwt", app.jwt, "render.index"); // use old api app.jwt
+	app.get("/login", "login.index");
+	app.get("/success", app.jwt, "success.index"); // is setting in config.jwt.match
 };

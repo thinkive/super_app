@@ -42,3 +42,7 @@ exports.i18n = {
   enable: true,
   package: 'egg-i18n',
 };
+exports.jwt = {
+	enable: true,
+	package: "egg-jwt"
+};

@@ -17,7 +17,7 @@ module.exports = appInfo => {
   // console.log(appInfo.root)
 
   return {
-    middleware: [ 'gzip'],//gzip和compress不能同时使用
+    middleware: ['errorHandler', 'gzip'],//gzip和compress不能同时使用
     keys: appInfo.name + '_1520690141955_3949',
     // 日志分为 NONE，DEBUG，INFO，WARN 和 ERROR 5 个级别 ,
     // 默认只会输出 INFO 及以上（WARN 和 ERROR）的日志到文件中。
@@ -135,6 +135,10 @@ module.exports = appInfo => {
       cookieField: 'locale',
       // Cookie 默认 `1y` 一年后过期， 如果设置为 Number，则单位为 ms
       cookieMaxAge: '1y',
-    }
+    },
+		jwt: {
+			secret: '123456'
+	    // match: '/jwt', // optional
+		}
   };
 };

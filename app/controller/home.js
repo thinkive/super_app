@@ -15,7 +15,8 @@ class Home extends Controller {
 
     this.logger.info('~~~~~~~~~~~ service/control this.logger.info ~~~~~~~~~~~~~~~~~~~~~')
 
-    this.__('Welcome back, %s!', this.user.email)
+    console.log(ctx.__('email'))
+		console.log(ctx.__('createdAt', ['杨迪']))
     ctx.body = `<ul>
       <li>Download <a href="/public/hi.txt">hi.txt</a>.</li>
       <li>Download <a href="/public/404.txt">404.txt</a>.</li>
