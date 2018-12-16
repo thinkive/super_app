@@ -2,7 +2,6 @@
 
 module.exports = (option, app) => {
 	return async function (ctx, next) {
-		console.log(11111111111)
 		try {
 			await next()
 		} catch (err) {

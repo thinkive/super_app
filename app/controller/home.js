@@ -11,19 +11,21 @@ class Home extends Controller {
     this.logger.debug('debug info');
     this.logger.info('some request data: %j', ctx.request.body);
     this.logger.warn('WARNNING!!!!');
-    this.logger.error(new Error('whoops'));
+    // this.logger.error(new Error('whoops'));
 
     this.logger.info('~~~~~~~~~~~ service/control this.logger.info ~~~~~~~~~~~~~~~~~~~~~')
 
     console.log(ctx.__('email'))
 		console.log(ctx.__('createdAt', ['杨迪']))
-    ctx.body = `<ul>
-      <li>Download <a href="/public/hi.txt">hi.txt</a>.</li>
-      <li>Download <a href="/public/404.txt">404.txt</a>.</li>
-      <li>Download <a href="/public/蛋蛋Web框架.txt">蛋蛋Web框架.txt</a>.</li>
-      <li>Download <a href="/public/foo.js">foo.js</a>.</li>
-    </ul>`;
-  }
+    // ctx.body = `<ul>
+    //   <li>Download <a href="/public/hi.txt">hi.txt</a>.</li>
+    //   <li>Download <a href="/public/404.txt">404.txt</a>.</li>
+    //   <li>Download <a href="/public/蛋蛋Web框架.txt">蛋蛋Web框架.txt</a>.</li>
+    //   <li>Download <a href="/public/foo.js">foo.js</a>.</li>
+    // </ul>`;
+		await this.ctx.render('home');
+
+	}
 }
 
 module.exports = Home;

@@ -139,6 +139,26 @@ module.exports = appInfo => {
 		jwt: {
 			secret: '123456'
 	    // match: '/jwt', // optional
-		}
+		},
+
+		io:{
+			init: { }, // passed to engine.io
+			namespace: {
+				'/': {
+					connectionMiddleware: [ 'auth' ],
+					packetMiddleware: [ 'filter' ],
+				},
+				'/chat': {
+					connectionMiddleware: [ 'auth' ],
+					packetMiddleware: [],
+				},
+			},
+			redis: {
+				host: '115.29.145.75',
+				port: '6379',
+				auth_pass: '217891qqqq',
+				db: 0,
+			},
+	  }
   };
 };

@@ -169,6 +169,9 @@ class UserService extends Service {
       throw (500);
     }
   }
+	async say() {
+		return 'Hello Man!';
+	}
 }
 
 module.exports = UserService;

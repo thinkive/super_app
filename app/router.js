@@ -15,4 +15,11 @@ module.exports = app => {
 	app.get("/jwt", app.jwt, "render.index"); // use old api app.jwt
 	app.get("/login", "login.index");
 	app.get("/success", app.jwt, "success.index"); // is setting in config.jwt.match
+
+
+
+	// app.io.of('/chat')
+	app.io.of('/').route('chat', app.io.controller.chat.ping);
+	// app.io.route('disconnect', app.io.controller.chat.disconnect);
+
 };
