@@ -1,28 +1,29 @@
-'use strict';
+'use strict'
 
-const Service = require('egg').Service;
+const Service = require('egg').Service
 const {
   ERROR,
   SUCCESS,
-} = require('../util/util');
+} = require('../util/util')
+
 class CollectService extends Service {
-  async create(collect) {
+  async create (collect) {
     const {
       ctx,
-    } = this;
+    } = this
     try {
-      const created = await ctx.modelmysql.Collect.create(collect);
-      ctx.status = 201;
+      const created = await ctx.modelmysql.Collect.create(collect)
+      ctx.status = 201
       return Object.assign(SUCCESS, {
         data: created,
-      });
+      })
     } catch (error) {
-      ctx.status = 500;
-      throw (error);
+      ctx.status = 500
+      throw (error)
     }
   }
 
-  async list({
+  async list ({
     offset = 0,
     limit = 10,
     order_by = 'created_at',
@@ -30,91 +31,92 @@ class CollectService extends Service {
   }) {
     const {
       ctx,
-    } = this;
+    } = this
     const options = {
       offset: parseInt(offset),
       limit: parseInt(limit),
       order: [
         [ order_by, order.toUpperCase() ],
       ],
-    };
+    }
     try {
-      const res = await ctx.modelmysql.Collect.findAndCountAll(options);
+      const res = await ctx.modelmysql.Collect.findAndCountAll(options)
       return Object.assign(SUCCESS, {
         data: res,
-      });
+      })
     } catch (error) {
-      ctx.status = 500;
-      throw (error);
+      ctx.status = 500
+      throw (error)
     }
   }
 
-  async del(id) {
+  async del (id) {
     const {
       ctx,
-    } = this;
+    } = this
     try {
-      const collect = await ctx.modelmysql.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id)
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',
-        });
+        })
       }
-      collect.destroy();
+      collect.destroy()
       return Object.assign(SUCCESS, {
         data: collect,
-      });
+      })
 
     } catch (error) {
-      ctx.status = 500;
-      throw (error);
+      ctx.status = 500
+      throw (error)
     }
   }
-  async find(id) {
+
+  async find (id) {
     const {
       ctx,
-    } = this;
+    } = this
     try {
-      const collect = await ctx.modelmysql.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id)
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',
-        });
+        })
       }
       return Object.assign(SUCCESS, {
         data: collect,
-      });
+      })
 
     } catch (error) {
-      ctx.status = 500;
-      throw (error);
+      ctx.status = 500
+      throw (error)
     }
   }
 
-  async update({
+  async update ({
     id,
     updates,
   }) {
     const {
       ctx,
-    } = this;
+    } = this
     try {
-      const collect = await ctx.modelmysql.Collect.findById(id);
+      const collect = await ctx.modelmysql.Collect.findById(id)
       if (!collect) {
         return Object.assign(ERROR, {
           msg: 'collect not found',
-        });
+        })
       }
-      const res = await collect.update(updates);
+      const res = await collect.update(updates)
       return Object.assign(SUCCESS, {
         data: res,
-      });
+      })
 
     } catch (error) {
-      ctx.status = 500;
-      throw (error);
+      ctx.status = 500
+      throw (error)
     }
   }
 }
 
-module.exports = CollectService;
+module.exports = CollectService

@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
 module.exports = app => {
   const {
     INTEGER,
     STRING,
     DATE,
-  } = app.Sequelize;
+  } = app.Sequelize
   const Collect = app.modelmysql.define('collect', {
     id: {
       type: INTEGER,
@@ -18,7 +18,7 @@ module.exports = app => {
     title: STRING,
     created_at: DATE,
     updated_at: DATE,
-  });
+  })
 
-  return Collect;
-};
+  return Collect
+}

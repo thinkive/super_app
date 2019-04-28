@@ -1,5 +1,5 @@
 module.exports = {
-	"email": "email",
-	"login": "login",
-	"createdAt": "register datetime {0}"
+  email: 'email',
+  login: 'login',
+  createdAt: 'register datetime {0}',
 }

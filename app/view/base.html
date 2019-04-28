@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>A quick app</title>
 
     <style>
-      body {
-        background-color: #ccffcc;
-      }
+        body {
+            background-color: #ccffcc;
+        }
 
-      .footer {
-        margin-top: 5em;
-        font-size: .75em;
-      }
+        .footer {
+            margin-top: 5em;
+            font-size: .75em;
+        }
     </style>
 
-  </head>
-  <body>
-  {{ testData }}
-  {{ testData2["test"] }}
-    {% block content %}{% endblock %}
+</head>
+<body>
+{{ testData }}
+{{ testData2["test"] }}
+{% block content %}{% endblock %}
 
-    <div class="footer">
-      {% block footer %}(c) James Long 2012{% endblock %}
-    </div>
-  </body>
+<div class="footer">
+    {% block footer %}(c) James Long 2012{% endblock %}
+</div>
+</body>
 </html>

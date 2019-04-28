@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
 module.exports = app => {
   const {
     INTEGER,
     STRING,
     DATE,
-  } = app.Sequelize;
+  } = app.Sequelize
 
   const Comment = app.modelmysql.define('comment', {
     id: {
@@ -18,12 +18,12 @@ module.exports = app => {
     },
     created_at: DATE,
     updated_at: DATE,
-  });
+  })
 
-  Comment.associate = function() {
-    app.modelmysql.Comment.belongsTo(app.modelmysql.User);
-    app.modelmysql.Comment.belongsTo(app.modelmysql.Blog);
-  };
+  Comment.associate = function () {
+    app.modelmysql.Comment.belongsTo(app.modelmysql.User)
+    app.modelmysql.Comment.belongsTo(app.modelmysql.Blog)
+  }
 
-  return Comment;
-};
+  return Comment
+}

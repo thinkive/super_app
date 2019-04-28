@@ -1,35 +1,35 @@
-'use strict';
+'use strict'
 
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
 
 class CommentController extends Controller {
-  async create() {
+  async create () {
     const {
       ctx,
-    } = this;
+    } = this
     const {
       blog_id,
       user_id,
       content,
-    } = ctx.request.body;
+    } = ctx.request.body
     ctx.body = await ctx.service.comment.create({
       blog_id,
       user_id,
       content,
-    });
+    })
   }
 
-  async destroy() {
+  async destroy () {
     const {
       ctx,
-    } = this;
-    const id = +ctx.params.id;
-    const user_id = +ctx.params.user_id;
+    } = this
+    const id = +ctx.params.id
+    const user_id = +ctx.params.user_id
     ctx.body = await ctx.service.comment.del({
       id,
       user_id,
-    });
+    })
   }
 }
 
-module.exports = CommentController;
+module.exports = CommentController

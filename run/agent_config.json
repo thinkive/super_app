@@ -4,7 +4,8 @@
       "maxAge": 86400000,
       "key": "EGG_SESS",
       "httpOnly": true,
-      "encrypt": true
+      "encrypt": true,
+      "renew": true
     },
     "security": {
       "domainWhiteList": [
@@ -78,7 +79,7 @@
       "templatePath": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
-      "defaultLocale": "en_US",
+      "defaultLocale": "zh-CN",
       "dirs": [],
       "queryField": "locale",
       "cookieField": "locale",
@@ -106,7 +107,10 @@
       "fields": 10,
       "fileSize": "10mb",
       "files": 10,
-      "fileExtensions": [],
+      "fileExtensions": [
+        ".foo",
+        ".apk"
+      ],
       "whitelist": null,
       "tmpdir": "/var/folders/5s/96yrf4f12698gzxc9tfcjv0r0000gn/T/egg-multipart-tmp/server_app",
       "cleanSchedule": {
@@ -136,20 +140,29 @@
       "root": "/Users/wecloud/WebstormProjects/examples/super_app/app/view",
       "cache": true,
       "defaultExtension": ".html",
-      "defaultViewEngine": "",
-      "mapping": {}
+      "defaultViewEngine": "nunjucks",
+      "mapping": {
+        ".nj": "nunjucks"
+      }
     },
     "sequelize": {
       "dialect": "mysql",
-      "database": "egg_db",
+      "database": "blog",
       "host": "115.29.145.75",
       "port": "3306",
       "username": "root",
       "password": "<String len: 10>",
+      "delegate": "modelmysql",
+      "baseDir": "modelmysql",
       "dialectOptions": {
         "charset": "utf8mb4"
       },
-      "timezone": "+08:00"
+      "timezone": "+08:00",
+      "benchmark": true,
+      "define": {
+        "freezeTableName": false,
+        "underscored": true
+      }
     },
     "cors": {
       "credentials": true
@@ -157,8 +170,8 @@
     "alinode": {
       "enable": true,
       "server": "wss://agentserver.node.aliyun.com:8080",
-      "appid": "your appid",
-      "secret": "<String len: 11>",
+      "appid": "77534",
+      "secret": "<String len: 40>",
       "cmddir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/commandx",
       "logdir": "/Users/wecloud/logs/alinode",
       "error_log": [
@@ -173,6 +186,65 @@
       "reportInterval": 60,
       "logger": "<EggLogger>",
       "libMode": true
+    },
+    "redis": {
+      "default": {},
+      "app": true,
+      "agent": true,
+      "supportTimeCommand": true,
+      "client": {
+        "host": "115.29.145.75",
+        "port": "6379",
+        "password": "<String len: 10>",
+        "db": "1"
+      }
+    },
+    "sessionRedis": {
+      "name": ""
+    },
+    "mongoose": {
+      "url": "mongodb://115.29.145.75:27017/admin",
+      "options": {},
+      "loadModel": true,
+      "app": true,
+      "agent": false
+    },
+    "validate": {},
+    "nunjucks": {
+      "autoescape": true,
+      "throwOnUndefined": false,
+      "trimBlocks": false,
+      "lstripBlocks": false,
+      "cache": true
+    },
+    "jwt": {
+      "secret": "<String len: 6>",
+      "enable": false
+    },
+    "io": {
+      "init": {},
+      "namespace": {
+        "/": {
+          "connectionMiddleware": [
+            "auth"
+          ],
+          "packetMiddleware": [
+            "filter"
+          ]
+        },
+        "/chat": {
+          "connectionMiddleware": [
+            "auth"
+          ],
+          "packetMiddleware": []
+        }
+      },
+      "redis": {
+        "host": "115.29.145.75",
+        "port": "6379",
+        "auth_pass": "217891qqqq",
+        "db": 0
+      }
     },
     "env": "prod",
     "name": "server_app",
@@ -190,10 +262,20 @@
         "egg": "^2.2.1",
         "egg-alinode": "^2.0.1",
         "egg-cors": "^2.0.0",
-        "egg-scripts": "^2.5.0",
-        "egg-sequelize": "^3.1.2",
+        "egg-jwt": "^3.1.4",
+        "egg-mongoose": "^3.1.1",
+        "egg-mysql": "^3.0.0",
+        "egg-redis": "^2.2.0",
+        "egg-scripts": "^2.10.0",
+        "egg-sequelize": "^4.2.0",
+        "egg-session-redis": "^2.1.0",
+        "egg-socket.io": "^4.1.5",
+        "egg-validate": "^2.0.2",
+        "egg-view-nunjucks": "^2.2.0",
         "js-md5": "^0.7.3",
-        "mysql2": "^1.5.2"
+        "koa-compress": "^3.0.0",
+        "mysql2": "^1.5.2",
+        "stream-to-array": "^2.3.0"
       },
       "devDependencies": {
         "autod": "^3.0.1",
@@ -209,9 +291,9 @@
         "node": ">=8.9.0"
       },
       "scripts": {
-        "start": "egg-scripts start --daemon --env=prod --port=7002 --title=egg-server-blog",
-        "stop": "egg-scripts stop --title=egg-server-blog",
-        "dev": "egg-bin dev",
+        "start": "egg-scripts start --daemon --env=prod --port=7003 --title=super_app --ignore-stderr --sticky",
+        "stop": "egg-scripts stop --title=super_app",
+        "dev": "egg-bin dev --daemon  --port=7003 --sticky",
         "debug": "egg-bin debug",
         "test": "npm run lint -- --fix && npm run test-local",
         "test-local": "egg-bin test",
@@ -219,7 +301,7 @@
         "lint": "eslint .",
         "ci": "npm run lint && npm run cov",
         "autod": "autod",
-        "migrate:new": "egg-sequelize migration:create",
+        "migrate:new": "egg-sequelize migration:create  --name init",
         "migrate:up": "egg-sequelize db:migrate",
         "migrate:down": "egg-sequelize db:migrate:undo"
       },
@@ -269,7 +351,7 @@
       "encoding": "utf-8",
       "env": "prod",
       "level": "INFO",
-      "consoleLevel": "NONE",
+      "consoleLevel": "DEBUG",
       "disableConsoleAfterReady": true,
       "outputJSON": false,
       "buffer": true,
@@ -327,11 +409,13 @@
     },
     "onClientError": null,
     "middleware": [
-      "gzip",
-      "compress"
+      "gzip"
     ],
     "gzip": {
       "match": "<Function match>",
+      "threshold": 1024
+    },
+    "compress": {
       "threshold": 1024
     },
     "coreMiddlewares": "~config~coreMiddleware",
@@ -391,12 +475,12 @@
     },
     "i18n": {
       "enable": true,
-      "package": "egg-i18n",
       "name": "i18n",
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "package": "egg-i18n",
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-i18n",
       "version": "2.0.0"
     },
@@ -431,7 +515,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "fileSize": "50mb",
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart",
       "version": "2.3.0"
     },
@@ -479,7 +564,7 @@
       "env": [],
       "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-sequelize",
-      "version": "3.1.5"
+      "version": "4.2.0"
     },
     "cors": {
       "enable": true,
@@ -502,6 +587,92 @@
       "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-alinode",
       "version": "2.0.1"
+    },
+    "redis": {
+      "enable": true,
+      "package": "egg-redis",
+      "name": "redis",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-redis",
+      "version": "2.2.0"
+    },
+    "sessionRedis": {
+      "enable": true,
+      "package": "egg-session-redis",
+      "name": "sessionRedis",
+      "dependencies": [
+        "redis"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session-redis",
+      "version": "2.1.0"
+    },
+    "mongoose": {
+      "enable": true,
+      "package": "egg-mongoose",
+      "name": "mongoose",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-mongoose",
+      "version": "3.1.1"
+    },
+    "validate": {
+      "enable": true,
+      "package": "egg-validate",
+      "name": "validate",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-validate",
+      "version": "2.0.2"
+    },
+    "nunjucks": {
+      "enable": true,
+      "package": "egg-view-nunjucks",
+      "name": "nunjucks",
+      "dependencies": [
+        "security",
+        "view"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view-nunjucks",
+      "version": "2.2.0"
+    },
+    "jwt": {
+      "enable": true,
+      "package": "egg-jwt",
+      "name": "jwt",
+      "dependencies": [],
+      "optionalDependencies": [
+        "onerror"
+      ],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-jwt",
+      "version": "3.1.4"
+    },
+    "io": {
+      "enable": true,
+      "package": "egg-socket.io",
+      "name": "io",
+      "dependencies": [
+        "session"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-socket.io",
+      "version": "4.1.5"
     }
   }
 }

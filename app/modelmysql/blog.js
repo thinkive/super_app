@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = app => {
   const {
@@ -6,7 +6,7 @@ module.exports = app => {
     STRING,
     TEXT,
     DATE,
-  } = app.Sequelize;
+  } = app.Sequelize
 
   const Blog = app.modelmysql.define('blog', {
     id: {
@@ -45,14 +45,14 @@ module.exports = app => {
     created_at: DATE,
     updated_at: DATE,
 
-  });
+  })
 
-  Blog.associate = function() {
-    app.modelmysql.Blog.belongsTo(app.modelmysql.User);
-    app.modelmysql.Blog.belongsTo(app.modelmysql.Catalog);
+  Blog.associate = function () {
+    app.modelmysql.Blog.belongsTo(app.modelmysql.User)
+    app.modelmysql.Blog.belongsTo(app.modelmysql.Catalog)
     app.modelmysql.Blog.hasMany(app.modelmysql.Comment, {
       as: 'comment',
-    });
-  };
-  return Blog;
-};
+    })
+  }
+  return Blog
+}

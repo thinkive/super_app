@@ -1,1 +1,4 @@
-{provance: '广东', city: '深圳'}
+{
+  provance: '广东',
+  city: '深圳'
+}

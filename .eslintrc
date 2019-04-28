@@ -2,5 +2,13 @@
   "extends": "eslint-config-egg",
   "parserOptions": {
     "ecmaVersion": 2017
+  },
+  "parser": "babel-eslint",
+  // add your custom rules here
+  "rules": {
+    "semi": 0,
+    "generator-star-spacing": "off",
+    "babel/generator-star-spacing": "off",
+    "space-before-function-paren": [0, "always"]
   }
 }

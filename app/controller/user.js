@@ -1,43 +1,43 @@
-'use strict';
+'use strict'
 
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
 
 class UserController extends Controller {
-  async create() {
+  async create () {
     const {
       ctx,
-    } = this;
-    ctx.body = await ctx.service.user.create(ctx.request.body);
+    } = this
+    ctx.body = await ctx.service.user.create(ctx.request.body)
   }
 
-  async destroy() {
+  async destroy () {
     const {
       ctx,
-    } = this;
-    const id = +ctx.params.id;
-    ctx.body = await ctx.service.user.del(id);
+    } = this
+    const id = +ctx.params.id
+    ctx.body = await ctx.service.user.del(id)
   }
 
-  async update() {
+  async update () {
     const {
       ctx,
-    } = this;
-    const id = +ctx.params.id;
-    const user = ctx.request.body;
+    } = this
+    const id = +ctx.params.id
+    const user = ctx.request.body
     ctx.body = await ctx.service.user.update({
       id,
       user,
-    });
+    })
   }
 
-  async login() {
+  async login () {
     const {
       ctx,
-    } = this;
+    } = this
     const {
       username,
       password,
-    } = ctx.request.body;
+    } = ctx.request.body
     // 表单校验
     const createRule = {
       username: {
@@ -47,26 +47,26 @@ class UserController extends Controller {
         type: 'password',
         compare: 're-password',
       },
-    };
+    }
     // 如果校验报错，会抛出异常
     try {
-      ctx.validate(createRule);
+      ctx.validate(createRule)
       ctx.body = await ctx.service.user.login({
         username,
         password,
-      });
+      })
     } catch (e) {
       console.log(e.errors[0].message)
     }
   }
 
-  async find() {
+  async find () {
     const {
       ctx,
-    } = this;
-    const id = +ctx.params.id;
-    ctx.body = await ctx.service.user.find(id);
+    } = this
+    const id = +ctx.params.id
+    ctx.body = await ctx.service.user.find(id)
   }
 }
 
-module.exports = UserController;
+module.exports = UserController

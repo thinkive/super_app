@@ -30,7 +30,8 @@
     "egg-mock": "^3.14.0",
     "eslint": "^4.11.0",
     "eslint-config-egg": "^6.0.0",
-    "webstorm-disable-index": "^1.2.0"
+    "webstorm-disable-index": "^1.2.0",
+    "babel-eslint": "8"
   },
   "engines": {
     "node": ">=8.9.0"

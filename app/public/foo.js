@@ -1,1 +1,1 @@
-alert('hi egg');
+alert('hi egg')

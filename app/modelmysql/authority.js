@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
 module.exports = app => {
   const {
     INTEGER,
     STRING,
     DATE,
-  } = app.Sequelize;
+  } = app.Sequelize
 
   const Authority = app.modelmysql.define('authority', {
     id: {
@@ -18,12 +18,11 @@ module.exports = app => {
     },
     created_at: DATE,
     updated_at: DATE,
-  });
+  })
 
-  Authority.associate = function() {
-    app.modelmysql.Authority.hasMany(app.modelmysql.User);
-  };
+  Authority.associate = function () {
+    app.modelmysql.Authority.hasMany(app.modelmysql.User)
+  }
 
-
-  return Authority;
-};
+  return Authority
+}

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // exports.keys = 'my keys';
 // 配置 logger 文件的目录，logger 默认配置由框架提供
@@ -8,7 +8,7 @@
 //         dir: 'logs', // 默认目录
 //     },
 // };
-const path = require('path');
+const path = require('path')
 module.exports = appInfo => {
   // console.log(appInfo.pkg)
   // console.log(appInfo.name)
@@ -47,10 +47,10 @@ module.exports = appInfo => {
     // match：设置只有符合某些规则的请求才会经过这个中间件。
     // ignore：设置符合某些规则的请求不经过这个中间件
     gzip: {
-      match(ctx) {
+      match (ctx) {
         // 只有 ios 设备才开启
-        const reg = /iphone|ipad|ipod/i;
-        return reg.test(ctx.get('user-agent'));
+        const reg = /iphone|ipad|ipod/i
+        return reg.test(ctx.get('user-agent'))
       },
       threshold: 1024, // 小于 1k 的响应体不压缩
     },
@@ -58,8 +58,8 @@ module.exports = appInfo => {
       threshold: 1024
     },
     sequelize: {
-			delegate: 'modelmysql',
-			baseDir: 'modelmysql',
+      delegate: 'modelmysql',
+      baseDir: 'modelmysql',
       dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
       dialectOptions: {
         charset: 'utf8mb4',
@@ -80,7 +80,7 @@ module.exports = appInfo => {
       csrf: {
         enable: false,// 临时关闭csrf验证
       },
-      domainWhiteList: [ 'http://127.0.0.1' ], // 跨域请求白名单
+      domainWhiteList: ['http://127.0.0.1'], // 跨域请求白名单
     },
     cors: {
       credentials: true,
@@ -99,7 +99,7 @@ module.exports = appInfo => {
         password: '217891qqqq',
         db: '1',// 默认0
       },
-      agent:true
+      agent: true
     },
     mongoose: {
       url: 'mongodb://115.29.145.75:27017/admin'
@@ -121,7 +121,7 @@ module.exports = appInfo => {
       //   '.png ',
       // ]
     },
-    alinode:{
+    alinode: {
       // 从 `Node.js 性能平台` 获取对应的接入参数
       appid: '77534',
       secret: 'e2300b3052f6ea8cba93b7629dd0e3307b3064d0',
@@ -136,29 +136,29 @@ module.exports = appInfo => {
       // Cookie 默认 `1y` 一年后过期， 如果设置为 Number，则单位为 ms
       cookieMaxAge: '1y',
     },
-		jwt: {
-			secret: '123456'
-	    // match: '/jwt', // optional
-		},
+    jwt: {
+      secret: '123456'
+      // match: '/jwt', // optional
+    },
 
-		io:{
-			init: { }, // passed to engine.io
-			namespace: {
-				'/': {
-					connectionMiddleware: [ 'auth' ],
-					packetMiddleware: [ 'filter' ],
-				},
-				'/chat': {
-					connectionMiddleware: [ 'auth' ],
-					packetMiddleware: [],
-				},
-			},
-			redis: {
-				host: '115.29.145.75',
-				port: '6379',
-				auth_pass: '217891qqqq',
-				db: 0,
-			},
-	  }
-  };
-};
+    io: {
+      init: {}, // passed to engine.io
+      namespace: {
+        '/': {
+          connectionMiddleware: ['auth'],
+          packetMiddleware: ['filter'],
+        },
+        '/chat': {
+          connectionMiddleware: ['auth'],
+          packetMiddleware: [],
+        },
+      },
+      redis: {
+        host: '115.29.145.75',
+        port: '6379',
+        auth_pass: '217891qqqq',
+        db: 0,
+      },
+    }
+  }
+}

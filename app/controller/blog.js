@@ -1,86 +1,87 @@
-'use strict';
+'use strict'
 
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
+
 class BlogController extends Controller {
-  async create() {
+  async create () {
     const {
       ctx,
-    } = this;
-    const body = ctx.request.body;
-    body.user_id = 1;
-    const created = await ctx.service.blog.create(ctx.request.body);
-    ctx.status = 201;
-    ctx.body = created;
+    } = this
+    const body = ctx.request.body
+    body.user_id = 1
+    const created = await ctx.service.blog.create(ctx.request.body)
+    ctx.status = 201
+    ctx.body = created
 
   }
 
-  async index() {
+  async index () {
     const {
       ctx,
-    } = this;
-    const res = await ctx.service.blog.index(ctx.query);
+    } = this
+    const res = await ctx.service.blog.index(ctx.query)
 
-    ctx.body = res;
+    ctx.body = res
   }
 
-  async destroy() {
+  async destroy () {
     const {
       ctx,
-    } = this;
-    const id = ctx.params.id;
-    const user_id = +ctx.params.user_id;
+    } = this
+    const id = ctx.params.id
+    const user_id = +ctx.params.user_id
     const res = await ctx.service.blog.del({
       id,
       user_id,
-    });
-    ctx.status = 200;
-    ctx.body = res;
+    })
+    ctx.status = 200
+    ctx.body = res
   }
 
-  async update() {
+  async update () {
     const {
       ctx,
-    } = this;
-    const id = ctx.params.id;
-    const user_id = +ctx.params.user_id;
-    const body = ctx.request.body;
+    } = this
+    const id = ctx.params.id
+    const user_id = +ctx.params.user_id
+    const body = ctx.request.body
     ctx.body = await ctx.service.blog.update({
       id,
       user_id,
       updates: body,
-    });
+    })
   }
 
-  async find() {
+  async find () {
     const {
       ctx,
-    } = this;
-    const id = ctx.params.id;
-    ctx.body = await ctx.service.blog.find(id);
+    } = this
+    const id = ctx.params.id
+    ctx.body = await ctx.service.blog.find(id)
   }
 
-  async edit() {
+  async edit () {
     const {
       ctx,
-    } = this;
-    const id = ctx.params.id;
-    ctx.body = await ctx.service.blog.edit(id);
+    } = this
+    const id = ctx.params.id
+    ctx.body = await ctx.service.blog.edit(id)
   }
 
-  async tags() {
+  async tags () {
     const {
       ctx,
-    } = this;
-    ctx.body = await ctx.service.blog.getTags();
+    } = this
+    ctx.body = await ctx.service.blog.getTags()
   }
 
-  async archive() {
+  async archive () {
     const {
       ctx,
-    } = this;
-    const year = ctx.query.year;
-    ctx.body = await ctx.service.blog.archive(year);
+    } = this
+    const year = ctx.query.year
+    ctx.body = await ctx.service.blog.archive(year)
   }
 }
 
-module.exports = BlogController;
+module.exports = BlogController
