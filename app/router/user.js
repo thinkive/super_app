@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports = app => {
+  app.all('/api/base', 'base.index')
   app.post('/api/users', 'user.create')
   app.del('/api/users/:id', 'user.destroy')
   app.put('/api/users/:id', 'user.update')

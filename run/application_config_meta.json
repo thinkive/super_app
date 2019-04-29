@@ -204,6 +204,9 @@
       "db": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js"
     }
   },
+  "validatePlus": {
+    "resolveError": "/Users/wecloud/WebstormProjects/examples/super_app/config/config.default.js"
+  },
   "helper": {
     "shtml": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-security/config/config.default.js"
   },
@@ -248,7 +251,6 @@
   "sessionRedis": {
     "name": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-session-redis/config/config.default.js"
   },
-  "validate": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-validate/config/config.default.js",
   "nunjucks": {
     "autoescape": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view-nunjucks/config/config.default.js",
     "throwOnUndefined": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-view-nunjucks/config/config.default.js",
@@ -280,6 +282,7 @@
       "egg-session-redis": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "egg-socket.io": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "egg-validate": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "egg-validate-plus": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "egg-view-nunjucks": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "js-md5": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "koa-compress": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
@@ -294,7 +297,8 @@
       "egg-mock": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "eslint": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
       "eslint-config-egg": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
-      "webstorm-disable-index": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
+      "webstorm-disable-index": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js",
+      "babel-eslint": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"
     },
     "engines": {
       "node": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/config.default.js"

@@ -9,7 +9,7 @@
     },
     "security": {
       "domainWhiteList": [
-        "http://119.29.151.195"
+        "http://127.0.0.1"
       ],
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
@@ -86,7 +86,7 @@
       "cookieMaxAge": "1y"
     },
     "watcher": {
-      "type": "default",
+      "type": "development",
       "eventSources": {
         "default": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/lib/event-sources/default",
         "development": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-watcher/lib/event-sources/development"
@@ -95,7 +95,7 @@
     "customLogger": {
       "scheduleLogger": {
         "consoleLevel": "NONE",
-        "file": "/Users/wecloud/logs/server_app/egg-schedule.log"
+        "file": "/Users/wecloud/WebstormProjects/examples/super_app/logs/server_app/egg-schedule.log"
       }
     },
     "multipart": {
@@ -117,6 +117,13 @@
         "cron": "0 30 4 * * *"
       }
     },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": false,
+      "reloadOnDebug": true,
+      "overrideDefault": false
+    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -132,13 +139,12 @@
       "dir": "/Users/wecloud/WebstormProjects/examples/super_app/app/public",
       "dynamic": true,
       "preload": false,
-      "buffer": true,
-      "maxFiles": 1000,
-      "maxAge": 31536000
+      "buffer": false,
+      "maxFiles": 1000
     },
     "view": {
       "root": "/Users/wecloud/WebstormProjects/examples/super_app/app/view",
-      "cache": true,
+      "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "nunjucks",
       "mapping": {
@@ -173,10 +179,10 @@
       "appid": "77534",
       "secret": "<String len: 40>",
       "cmddir": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/commandx",
-      "logdir": "/Users/wecloud/logs/alinode",
+      "logdir": "/Users/wecloud/WebstormProjects/examples/super_app/logs/alinode",
       "error_log": [
-        "/Users/wecloud/logs/server_app/common-error.log",
-        "/Users/wecloud/logs/stderr.log"
+        "/Users/wecloud/WebstormProjects/examples/super_app/logs/server_app/common-error.log",
+        "/Users/wecloud/WebstormProjects/examples/super_app/logs/stderr.log"
       ],
       "packages": [
         "/Users/wecloud/WebstormProjects/examples/super_app/package.json"
@@ -209,13 +215,15 @@
       "app": true,
       "agent": false
     },
-    "validate": {},
+    "validatePlus": {
+      "resolveError": "<Function resolveError>"
+    },
     "nunjucks": {
       "autoescape": true,
       "throwOnUndefined": false,
       "trimBlocks": false,
       "lstripBlocks": false,
-      "cache": true
+      "cache": false
     },
     "jwt": {
       "secret": "<String len: 6>",
@@ -246,7 +254,7 @@
         "db": 0
       }
     },
-    "env": "prod",
+    "env": "local",
     "name": "server_app",
     "keys": "<String len: 29>",
     "proxy": false,
@@ -271,6 +279,7 @@
         "egg-session-redis": "^2.1.0",
         "egg-socket.io": "^4.1.5",
         "egg-validate": "^2.0.2",
+        "egg-validate-plus": "^1.1.6",
         "egg-view-nunjucks": "^2.2.0",
         "js-md5": "^0.7.3",
         "koa-compress": "^3.0.0",
@@ -285,7 +294,8 @@
         "egg-mock": "^3.14.0",
         "eslint": "^4.11.0",
         "eslint-config-egg": "^6.0.0",
-        "webstorm-disable-index": "^1.2.0"
+        "webstorm-disable-index": "^1.2.0",
+        "babel-eslint": "8"
       },
       "engines": {
         "node": ">=8.9.0"
@@ -349,17 +359,19 @@
     "logger": {
       "dir": "/Users/wecloud/WebstormProjects/examples/super_app/logs",
       "encoding": "utf-8",
-      "env": "prod",
+      "env": "local",
       "level": "INFO",
       "consoleLevel": "DEBUG",
-      "disableConsoleAfterReady": true,
+      "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "server_app-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {},
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
       "allowDebugAtProd": false,
       "type": "agent"
     },
@@ -409,6 +421,7 @@
     },
     "onClientError": null,
     "middleware": [
+      "errorHandler",
       "gzip"
     ],
     "gzip": {
@@ -520,6 +533,21 @@
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-multipart",
       "version": "2.3.0"
     },
+    "development": {
+      "enable": true,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg/config/plugin.js",
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-development",
+      "version": "2.4.1"
+    },
     "logrotator": {
       "enable": true,
       "package": "egg-logrotator",
@@ -623,16 +651,16 @@
       "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-mongoose",
       "version": "3.1.1"
     },
-    "validate": {
+    "validatePlus": {
       "enable": true,
-      "package": "egg-validate",
-      "name": "validate",
+      "package": "egg-validate-plus",
+      "name": "validatePlus",
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
       "from": "/Users/wecloud/WebstormProjects/examples/super_app/config/plugin.js",
-      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/egg-validate",
-      "version": "2.0.2"
+      "path": "/Users/wecloud/WebstormProjects/examples/super_app/node_modules/_egg-validate-plus@1.1.6@egg-validate-plus",
+      "version": "1.1.6"
     },
     "nunjucks": {
       "enable": true,

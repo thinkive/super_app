@@ -17,13 +17,13 @@ module.exports = appInfo => {
   // console.log(appInfo.root)
 
   return {
-    middleware: ['errorHandler', 'gzip'],//gzip和compress不能同时使用
+    middleware: [ 'errorHandler', 'gzip' ], // gzip和compress不能同时使用
     keys: appInfo.name + '_1520690141955_3949',
     // 日志分为 NONE，DEBUG，INFO，WARN 和 ERROR 5 个级别 ,
     // 默认只会输出 INFO 及以上（WARN 和 ERROR）的日志到文件中。
     logger: {
       encoding: 'utf-8', // 默认
-      level: 'INFO',// // 默认只会输出 INFO 及以上（WARN 和 ERROR的日志到终端中，NONE关闭日志 ，DEBUG 打印所有
+      level: 'INFO', // // 默认只会输出 INFO 及以上（WARN 和 ERROR的日志到终端中，NONE关闭日志 ，DEBUG 打印所有
       consoleLevel: 'DEBUG', // 默认只会输出 INFO 及以上（WARN 和 ERROR的日志到终端中
       dir: path.join(appInfo.baseDir, 'logs'),
       appLogName: `${appInfo.name}-web.log`,
@@ -55,7 +55,7 @@ module.exports = appInfo => {
       threshold: 1024, // 小于 1k 的响应体不压缩
     },
     compress: {
-      threshold: 1024
+      threshold: 1024,
     },
     sequelize: {
       delegate: 'modelmysql',
@@ -74,13 +74,13 @@ module.exports = appInfo => {
       define: {
         freezeTableName: false,
         underscored: true,
-      }
+      },
     },
     security: {
       csrf: {
-        enable: false,// 临时关闭csrf验证
+        enable: false, // 临时关闭csrf验证
       },
-      domainWhiteList: ['http://127.0.0.1'], // 跨域请求白名单
+      domainWhiteList: [ 'http://127.0.0.1' ], // 跨域请求白名单
     },
     cors: {
       credentials: true,
@@ -90,19 +90,19 @@ module.exports = appInfo => {
       maxAge: 24 * 3600 * 1000, // 1 天
       httpOnly: true,
       encrypt: true,
-      renew: true,// 延长会话，默认false
+      renew: true, // 延长会话，默认false
     },
     redis: {
       client: {
         host: '115.29.145.75',
         port: '6379',
         password: '217891qqqq',
-        db: '1',// 默认0
+        db: '1', // 默认0
       },
-      agent: true
+      agent: true,
     },
     mongoose: {
-      url: 'mongodb://115.29.145.75:27017/admin'
+      url: 'mongodb://115.29.145.75:27017/admin',
     },
     view: {
       defaultViewEngine: 'nunjucks',
@@ -137,7 +137,7 @@ module.exports = appInfo => {
       cookieMaxAge: '1y',
     },
     jwt: {
-      secret: '123456'
+      secret: '123456',
       // match: '/jwt', // optional
     },
 
@@ -145,11 +145,11 @@ module.exports = appInfo => {
       init: {}, // passed to engine.io
       namespace: {
         '/': {
-          connectionMiddleware: ['auth'],
-          packetMiddleware: ['filter'],
+          connectionMiddleware: [ 'auth' ],
+          packetMiddleware: [ 'filter' ],
         },
         '/chat': {
-          connectionMiddleware: ['auth'],
+          connectionMiddleware: [ 'auth' ],
           packetMiddleware: [],
         },
       },
@@ -159,6 +159,19 @@ module.exports = appInfo => {
         auth_pass: '217891qqqq',
         db: 0,
       },
-    }
+    },
+    validatePlus: {
+      resolveError(ctx, errors) {
+        if (errors.length) {
+          ctx.type = 'json';
+          ctx.status = 400;
+          ctx.body = {
+            code: 400,
+            error: errors,
+            message: '参数错误',
+          };
+        }
+      },
+    },
   }
 }

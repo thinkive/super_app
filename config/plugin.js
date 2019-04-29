@@ -27,9 +27,14 @@ exports.mongoose = {
   enable: true,
   package: 'egg-mongoose',
 };
-exports.validate = {
+// 官方提供这个插件太弱
+// exports.validate = {
+//   enable: true,
+//   package: 'egg-validate',
+// };
+exports.validatePlus = {
   enable: true,
-  package: 'egg-validate',
+  package: 'egg-validate-plus',
 };
 exports.nunjucks = {
   enable: true,
@@ -43,10 +48,10 @@ exports.i18n = {
   package: 'egg-i18n',
 };
 exports.jwt = {
-	enable: true,
-	package: "egg-jwt"
+  enable: true,
+  package: 'egg-jwt',
 };
 exports.io = {
-	enable: true,
-	package: 'egg-socket.io',
+  enable: true,
+  package: 'egg-socket.io',
 };

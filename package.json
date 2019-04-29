@@ -16,6 +16,7 @@
     "egg-session-redis": "^2.1.0",
     "egg-socket.io": "^4.1.5",
     "egg-validate": "^2.0.2",
+    "egg-validate-plus": "^1.1.6",
     "egg-view-nunjucks": "^2.2.0",
     "js-md5": "^0.7.3",
     "koa-compress": "^3.0.0",
