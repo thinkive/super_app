@@ -40,7 +40,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --env=prod --port=7003 --title=super_app --ignore-stderr --sticky",
     "stop": "egg-scripts stop --title=super_app",
-    "dev": "egg-bin dev --daemon  --port=7003 --sticky",
+    "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
